@@ -7,10 +7,10 @@ RUN apt-get update
 
 ################## BEGIN INSTALLATION ######################
 # Install opejdk
-RUN apt-get install -y default-jdk
+RUN apt-get install  default-jdk -y
 
 # install git and maven
-RUN  apt-get install -y  git maven
+RUN  apt-get install  git maven -y
 
 
 # Create the default data directory
@@ -21,7 +21,8 @@ RUN mkdir -p /data/
 WORKDIR /data
 
 # perform git clone
-RUN git clone https://github.com/anilbidari/CloudenabledWebApp.git
+RUN git clone https://github.com/Navyagowda-1234/webapp.git
+
 
 # switch to cloudenabledwebapp directory
 WORKDIR /data/CloudenabledWebApp
