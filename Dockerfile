@@ -7,10 +7,10 @@ RUN apt-get update
 
 ################## BEGIN INSTALLATION ######################
 # Install opejdk
-RUN apt-get install  default-jdk -y
+RUN apt-get install -y default-jdk
 
 # install git and maven
-RUN  apt-get install  git maven -y
+RUN  apt-get install -y  git maven
 
 
 # Create the default data directory
@@ -21,11 +21,10 @@ RUN mkdir -p /data/
 WORKDIR /data
 
 # perform git clone
-RUN git clone https://github.com/Navyagowda-1234/webapp.git
-
+RUN git clone https://github.com/krishtambe/CloudProject.git
 
 # switch to cloudenabledwebapp directory
-WORKDIR /data/CloudenabledWebApp
+WORKDIR /data/CloudProject
 
 # use maven to package
 RUN mvn package
@@ -35,10 +34,10 @@ RUN mvn package
 RUN apt-get install -y tomcat8
 
 # switch to cloudenabledwebapp directory
-WORKDIR /data/CloudenabledWebApp/target/
+WORKDIR /data/CloudProject/target/
 
 # copy war file
-RUN cp /data/CloudenabledWebApp/target/CloudenabledWebApp.war /var/lib/tomcat7/webapps/
+RUN cp /data/CloudProject/target/CloudProject.war /var/lib/tomcat8/webapps/
 
 
 
