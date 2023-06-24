@@ -1,5 +1,5 @@
 # Set the base image to Ubuntu
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
 
 # Update the repository sources list
@@ -32,7 +32,7 @@ RUN mvn package
 
  
 # install tomcat7
-RUN apt-get install -y tomcat7
+RUN apt-get install -y tomcat8
 
 # switch to cloudenabledwebapp directory
 WORKDIR /data/CloudenabledWebApp/target/
