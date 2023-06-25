@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 
 
 # Update the repository sources list
-RUN apt-get update
+RUN apt-get update -y
 
 ################## BEGIN INSTALLATION ######################
 # Install opejdk
