@@ -40,7 +40,6 @@ WORKDIR /data/CloudProject/target/
 RUN cp /data/CloudProject/target/CloudProject.war /var/lib/tomcat8/webapps/
 
 
-
 # Expose the default port
 EXPOSE 8080
 
